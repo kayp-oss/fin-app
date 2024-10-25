@@ -1,9 +1,10 @@
 import bundleAnalyzer from '@next/bundle-analyzer'
+import { env } from './src/env.mjs'
 
 const withBundleAnalyzer = bundleAnalyzer({
-  enabled: process.env.ANALYZE === 'true',
-  openAnalyzer: false,
-  analyzerMode: 'static',
+  enabled: env.ANALYZE,
+  openAnalyzer: env.OPEN_ANALYZER,
+  analyzerMode: env.ANALYZER_MODE,
 })
 
 /**

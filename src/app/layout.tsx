@@ -37,10 +37,10 @@ const RootLayout: React.FC<PropsWithChildren> = ({ children }) => {
       className={cn(
         GeistSans.variable,
         GeistMono.variable,
-        'top-[-25px] antialiased',
+        'bg-black text-white antialiased',
       )}
     >
-      <body className='bg-black text-white'>{children}</body>
+      <body>{children}</body>
     </html>
   )
 }
