@@ -91,8 +91,7 @@ async function copyFile(destination, content) {
  */
 async function checkSourceFileAccess(source) {
   try {
-    await fs.access(source, fs.constants.R_OK | fs.constants.W_OK)
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    await fs.access(source, fs.constants.R_OK)
   } catch (_error) {
     throw new Error("You don't have permission to read the .env.example file")
   }
