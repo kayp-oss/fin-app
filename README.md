@@ -19,3 +19,13 @@ Telegram Mini Apps are an innovative way to engage with your audience, offering 
 - **Seamless Integration:** Directly integrate your services into Telegram, one of the most popular messaging platforms with millions of active users.
 - **Enhanced User Experience:** Provide users with interactive and sophisticated web apps without the need for separate downloads or installations.
 - **Rapid Development:** With the support for web technologies, developers can quickly create and deploy Mini Apps.
+
+## Prerequisites
+- nodejs (>= 18.x.x)
+- pnpm (>= 8.x.x)
+
+## License
+This project is licensed under the GNU General Public License v3.0. See the [LICENSE](./LICENSE) file for more details.
+
+## Contact
+If you have any questions or suggestions, feel free to reach out via [email](mailto:oss@kayp.uz).
