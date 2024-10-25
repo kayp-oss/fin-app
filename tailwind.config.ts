@@ -7,6 +7,7 @@ const config: Config = {
   content: [
     'src/app/**/*.{ts,tsx}',
     'src/components/**/*.{ts,tsx}',
+    'src/features/**/*.{ts,tsx}',
     'src/layouts/**/*.{ts,tsx}',
     'src/widgets/**/*.{ts,tsx}',
   ],
@@ -26,9 +27,13 @@ const config: Config = {
         mono: ['var(--font-geist-mono)', ...fontFamily.mono],
       },
       keyframes: {
-        shimmer: {
+        'shimmer': {
           from: { transform: 'translateX(-100%)' },
           to: { transform: 'translateX(100%)' },
+        },
+        'shimmer-bg': {
+          from: { backgroundPositionX: '100%' },
+          to: { backgroundPositionX: '0%' },
         },
       },
     },
