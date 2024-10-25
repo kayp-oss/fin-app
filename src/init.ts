@@ -26,10 +26,10 @@ export function init(debug: boolean): void {
   initData.restore()
 
   // Mount viewport and handle any errors
-  void mountViewport()
-
-  // Bind CSS variables
-  bindCssVariables()
+  void viewport.mount().catch(error => {
+    console.error('Something went wrong mounting the viewport:', error)
+    throw new Error('Something went wrong mounting the viewport!')
+  })
 }
 
 /**
@@ -41,24 +41,4 @@ function mountComponents(): void {
   }
   miniApp.mount()
   themeParams.mount()
-}
-
-/**
- * Mounts the viewport and logs any errors.
- */
-async function mountViewport(): Promise<void> {
-  try {
-    await viewport.mount()
-  } catch (error) {
-    console.error('Something went wrong mounting the viewport:', error)
-  }
-}
-
-/**
- * Binds CSS variables for various components.
- */
-function bindCssVariables(): void {
-  viewport.bindCssVars()
-  miniApp.bindCssVars()
-  themeParams.bindCssVars()
 }

@@ -18,7 +18,7 @@ export const env = createEnv({
    * Environment variables available on the client (and server).
    */
   client: {
-    //
+    NEXT_PUBLIC_NODE_ENV: z.enum(['development', 'production']),
   },
 
   /*
@@ -27,6 +27,7 @@ export const env = createEnv({
    */
   runtimeEnv: {
     NODE_ENV: process.env.NODE_ENV,
+    NEXT_PUBLIC_NODE_ENV: process.env.NODE_ENV,
 
     ANALYZE: process.env.ANALYZE,
     OPEN_ANALYZER: process.env.OPEN_ANALYZER,

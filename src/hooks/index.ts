@@ -12,5 +12,6 @@
  * import { useDidMount, useSomeFn } from '#hooks'
  */
 
+export { useTelegramMock } from '#hooks/useTelegramMock'
 export { useClientOnce } from '#hooks/useClientOnce'
 export { useDidMount } from '#hooks/useDidMount'
