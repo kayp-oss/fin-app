@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useRef } from 'react'
 
 type UseClientOnceFn = () => void
 
@@ -17,12 +17,18 @@ type UseClientOnceFn = () => void
 export function useClientOnce(fn: UseClientOnceFn): void {
   const hasRun = useRef(false)
 
-  useEffect(() => {
-    if (!hasRun.current) {
-      hasRun.current = true
-      fn()
-    }
-  }, [fn])
+  /**
+   * Confirms that the code is running in a browser environment (`typeof window !== 'undefined`),
+   * which prevents execution on the server side.
+   *
+   * By checking outside React lifecycle hooks (like `useEffect`), the hook minimizes unnecessary renders
+   * and allows `fn` to execute immediately on component initialization, but only once in the client environment.
+   * The `hasRun` ref ensures `fn` is only called once per component lifecycle.
+   */
+  if (typeof window !== 'undefined' && !hasRun.current) {
+    hasRun.current = true
+    fn()
+  }
 
   return
 }
