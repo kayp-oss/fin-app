@@ -16,6 +16,5 @@
   "arrowParens": "avoid",
   "endOfLine": "crlf",
 
-  "parser": "typescript",
   "plugins": ["prettier-plugin-tailwindcss"]
 }

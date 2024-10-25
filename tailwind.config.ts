@@ -1,15 +1,16 @@
-import type { Config } from 'tailwindcss';
+import type { Config } from 'tailwindcss'
 
-import colors from 'tailwindcss/colors';
-import { fontFamily } from 'tailwindcss/defaultTheme';
+import colors from 'tailwindcss/colors'
+import { fontFamily } from 'tailwindcss/defaultTheme'
 
-export default {
+const config: Config = {
   content: [
     'src/app/**/*.{ts,tsx}',
     'src/components/**/*.{ts,tsx}',
     'src/layouts/**/*.{ts,tsx}',
     'src/widgets/**/*.{ts,tsx}',
   ],
+
   theme: {
     colors: {
       inherit: colors.inherit,
@@ -32,5 +33,8 @@ export default {
       },
     },
   },
+
   plugins: [],
-} satisfies Config;
+}
+
+export default config
